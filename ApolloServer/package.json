@@ -1,0 +1,34 @@
+{
+  "name": "ApolloServer",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./server.js --exec babel-node"
+  },
+  "dependencies": {
+    "apollo-server": "^0.3.2",
+    "auth0": "^2.4.0",
+    "axios": "^0.14.0",
+    "babel-core": "^6.5.2",
+    "babel-loader": "6.2.3",
+    "babel-polyfill": "6.5.0",
+    "babel-preset-es2015": "6.5.0",
+    "babel-preset-react": "6.5.0",
+    "babel-preset-stage-0": "6.5.0",
+    "body-parser": "^1.15.2",
+    "express": "4.13.4",
+    "graphql": "^0.7.1",
+    "graphql-tools": "^0.7.2"
+  },
+  "devDependencies": {
+    "babel-cli": "6.5.1",
+    "eslint": "^3.7.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "lodash": "^4.11.1",
+    "nodemon": "^1.9.1",
+    "webpack": "^1.13.1"
+  }
+}
