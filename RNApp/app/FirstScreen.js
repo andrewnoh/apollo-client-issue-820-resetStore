@@ -92,7 +92,7 @@ const FirstScreen = (props) => {
     <View style={styles.container}>
       <Text
         style={styles.welcome}
-        onPress={() => Actions.drawer()}
+        onPress={() => Actions.second()}
       >
         {routes.scene.title} (onPress => Second Screen)
       </Text>
@@ -101,28 +101,8 @@ const FirstScreen = (props) => {
         <View style={styles.button}><Text style={styles.buttonText} onPress={() => increment()}>+</Text></View>
         <View style={styles.button}><Text style={styles.buttonText} onPress={() => decrement()}>-</Text></View>
       </View>
-      {loading ? <Spinner color="blue" /> : <Text>{fortuneCookie}</Text>}
     </View>
   );
 };
 
-const FortuneCookie = gql`query FortuneCookie
-  {
-    getFortuneCookie
-  }
-`;
-const FirstScreenContainer = graphql(FortuneCookie, {
-  props: ({ ownProps, data }) => {
-    if (data.loading) return { loading: true };
-    if (data.error) console.log(data.error);
-    return {
-      fortuneCookie: data.getFortuneCookie,
-    };
-  },
-  options: {
-    pollInterval: 30000,
-  },
-})(FirstScreen);
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(withApollo(FirstScreenContainer));
+export default connect(mapStateToProps, mapDispatchToProps)(withApollo(FirstScreen));
