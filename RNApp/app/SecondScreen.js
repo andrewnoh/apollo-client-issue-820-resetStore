@@ -35,6 +35,10 @@ class SecondScreen extends Component {
     super();
   }
 
+  componentWillUnmount() {
+    console.log('componentWillUnmount SecondScreen');
+  }
+
   logout() {
     const { client } = this.props;
 
@@ -42,7 +46,10 @@ class SecondScreen extends Component {
     // wait 5 seconds to make sure we're definitely out of this component,
     // back to first screen,
     // and APOLLO_QUERY_STOP happened
-    setTimeout(() => client.resetStore(), 5000);
+    setTimeout(() => {
+      console.log('resetStore');
+      client.resetStore();
+    }, 5000);
   }
 
   render() {
